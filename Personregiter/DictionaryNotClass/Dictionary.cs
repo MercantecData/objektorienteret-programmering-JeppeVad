@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Personregiter;
+using Personregister;
 
 namespace DictionaryNotClass
 {
-    class Program
+    class Dictionary
     {
         static void Main(string[] args)
         {
@@ -22,6 +22,7 @@ namespace DictionaryNotClass
             numbers.Add("eight", 8);
             numbers.Add("nine", 9);
             numbers.Add("ten", 10);
+            numbers["sixnine"] = 69;
             
             Console.WriteLine(numbers["one"]);
             Console.WriteLine(numbers["two"]);
@@ -39,16 +40,17 @@ namespace DictionaryNotClass
             floatbool.Add(322, true);
             floatbool.Add(4, true);
 
-            PersonForKey person3 = new PersonForKey("Marcus", 12);
-            PersonForKey person4 = new PersonForKey("Carl", 13);
+            PersonForDic person1 = new PersonForDic("Marcus", 12);
+            PersonForDic person2 = new PersonForDic("Carl", 13);
 
-            Dictionary<PersonForKey, int> numbersForKids = new Dictionary<PersonForKey, int>();
+            Dictionary<PersonForDic, int> numbersForPeople = new Dictionary<PersonForDic, int>();
 
-            numbersForKids.Add(person3, 12121212);
-            numbersForKids.Add(person4, 21212121);
+            numbersForPeople.Add(person1, 12121212);
+            numbersForPeople.Add(person2, 21212121);
+            
 
-            Console.WriteLine(numbersForKids[person3]);
-            Console.WriteLine(numbersForKids[person4]);
+            Console.WriteLine(numbersForPeople[person1]);
+            Console.WriteLine(numbersForPeople[person2]);
         }
     }
 }
