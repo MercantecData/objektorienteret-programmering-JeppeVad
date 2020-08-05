@@ -20,7 +20,6 @@ namespace Personregister
             this.jobDescriotion = jobDescriotion;
         }
 
-        public List<Person> people = new List<Person>();
 
     }
 

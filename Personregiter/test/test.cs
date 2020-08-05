@@ -8,7 +8,9 @@ namespace test
     {
         static void Main(string[] args)
         {
-            
+            var funktioner = new RegisterFunktion();
+
+
             //----------------------------------------- OPGAVE PÅ TAVLE -------------------------------------------------------//
             // Få den data some skal bruges til person1's job
             Job person1Job = new Job("Janitor", 21000, "Hudson High School");
@@ -21,7 +23,7 @@ namespace test
             Job person5Job = new Job("CEO", "Wayne Interprise");
             Person person5 = new Person("Bruce", "Wayne", 34, person5Job);
             // Henter liste fra Personregister.cs
-            var listOfPeople = person1.people;
+            var listOfPeople = funktioner.people;
             // Tilføjer personer til liste
             listOfPeople.Add(person1);
             listOfPeople.Add(person2);
@@ -66,7 +68,6 @@ namespace test
             PersonForDic person3 = new PersonForDic("Marcus", 12);
             PersonForDic person4 = new PersonForDic("Carl", 13);
             
-            var funktioner = new RegisterFunktion();
             // Sætter ind i en dictionary inden i RegisterFunktion, så er det mere smart at sætte nye personer ind i en dictionary
             funktioner.setNameAgeDic("Carson", 20);
 
@@ -80,7 +81,28 @@ namespace test
             Console.WriteLine(numbersForPeople[person3]);
             Console.WriteLine(numbersForPeople[person4]);
 
-            //---------------------------------------------- OPGAVE: XXXXXXXXXXXXXX ------------------------------------//
+            //---------------------------------------------- OPGAVE: OVERLOAD MATH ------------------------------------//
+            Console.WriteLine(" ");
+
+            Classes.Math mathCalculate = new Classes.Math();
+
+            mathCalculate.Plus(1, 1);
+            mathCalculate.Plus("2,1", "1");
+            mathCalculate.Gange("2,1", "3");
+            Console.WriteLine(mathCalculate.Potens(2.3f, 2.1f));
+            float sum = mathCalculate.Potens(4.2f, 3.3f);
+            Console.WriteLine(sum);
+            Console.WriteLine(mathCalculate.Potens(3.2f, 2));
+
+            //---------------------------------------------- OPGAVE: MATHIAS KOMODE ----------------------------------//
+
+            Tøj tøk = new Tøj(5,2,3);
+            Komode komode = new Komode("rød", 4, tøk);
+
+            Console.WriteLine(komode.hoodiesTilgængelig(tøk.Hoodies));
+            
+
+
         }
 
 
