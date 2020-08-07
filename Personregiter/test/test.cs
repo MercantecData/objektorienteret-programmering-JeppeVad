@@ -100,8 +100,17 @@ namespace test
             Komode komode = new Komode("rød", 4, tøk);
 
             Console.WriteLine(komode.hoodiesTilgængelig(tøk.Hoodies));
-            
 
+            //------------------------------------------- OPGAVE: DELEGATE ----------------------------------------//
+
+            Delegates.test1 nytNavn = Delegates.toTest1;
+            nytNavn();
+
+            Delegates.testFloat testfloat = Delegates.toTestFloat;
+            testfloat();
+
+            Delegates.taImodTrePara testTreParameter = Delegates.toTaImodTrePara;
+            testTreParameter("Carl", "Marcus", "Landet");
 
         }
 
