@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Classes;
 using Personregister;
 namespace test
@@ -42,7 +43,6 @@ namespace test
             // Dictionary med string og int
             Dictionary<string, int> numbers = new Dictionary<string, int>();
             numbers.Add("one", 1);
-            numbers.Add("en", 1);
             numbers.Add("two", 2);
             numbers.Add("three", 3);
             numbers.Add("four", 4);
@@ -52,7 +52,8 @@ namespace test
             numbers.Add("eight", 8);
             numbers.Add("nine", 9);
             numbers.Add("ten", 10);
-            numbers["sixnine"] = 69;
+            Console.WriteLine(numbers["one"]); // printer "1" til consolen
+            Console.WriteLine(numbers["six"]); // printer "6" til consolen
 
             // Dictionary med float og bool
             Dictionary<float, bool> floatbool = new Dictionary<float, bool>();
@@ -111,6 +112,54 @@ namespace test
 
             Delegates.taImodTrePara testTreParameter = Delegates.toTaImodTrePara;
             testTreParameter("Carl", "Marcus", "Landet");
+
+            //----------------------------------------- OGPAVE: Gæt et tal -------------------------------------//
+
+            GætEtTal.GætTal(true);
+            var startgame = GætEtTal.GætTal(true);
+            Random randomNum = new Random();
+            int numbToGuess = randomNum.Next(1,11);
+            int guess = 12;
+            GætEtTal.GætTal(true);
+            while(guess != numbToGuess)
+            {
+                guess = int.Parse(Console.ReadLine());
+
+                if(guess == numbToGuess)
+                {
+                    Console.WriteLine("Du har gættet rigtigt!");
+                } 
+                else if (guess != numbToGuess)
+                {
+                    Console.WriteLine("Du har IKKE gættet rigtigt!");
+                }
+
+            }
+            Task.WaitAll(startgame);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 
